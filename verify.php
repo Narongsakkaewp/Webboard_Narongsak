@@ -9,17 +9,24 @@
 <body>
     <h1 style="text-align: center;">Narongsak's Webboard</h1>
     <hr>
-    <div style="text-align: center;"> 
-    เข้าสู่ระบบด้วย<br>
-    Login = <?php echo $_POST['login']?> <br>
-    Password = <?php echo $_POST['pwd']?> <br> <br>
-
+    <div style="text-align: center;">
     <?php
+    $login= $_POST["login"];
+    $pwd= $_POST["pwd"];
+    if($login=="admin" && $pwd=="ad1234"){
+        echo "ยินดีต้อนรับคุณ ADMIN <br>";
+    }elseif($login=="member" && $pwd=="mem1234"){
+        echo "ยินดีต้อนรับคุณ MEMBER <br>";
+    }else{
+        echo "ชื่อบัญชีหรือรหัสผ่านไม่ถูกต้อง<br>";
+    }
+
     /*echo "เข้าสู่ระบบด้วย <br>";
     echo "Login = $_POST[login]<br>";
-    echo "Password = $_POST[pwd]<br>";
-    */ //สามารถใช้แบบนี้ได้ โดยไม่ต้องเปิดแท็ก php ประจำ
+    echo "Password = $_POST[pwd]<br>"; //สามารถใช้แบบนี้ได้ โดยไม่ต้องเปิดแท็ก php ประจำ
+    */
     ?>
+    <a href="index.php">กลับไปหน้าหลัก</a>
     </div>
 </body>
 </html>
