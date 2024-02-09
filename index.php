@@ -26,8 +26,8 @@ session_start();
                 <ul class="navbar-nav">
                     <?php if(!isset($_SESSION['id'])){?>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="login.php"><i
-                            class="bi bi-pencil-square"></i>เข้าสู่ระบบ</a>
+                        <a class="nav-link" aria-current="page" href="login.php">
+                            <i class="bi bi-pencil-square"></i>เข้าสู่ระบบ</a>
                     </li>
                     <?php }else{ ?>
                     <li class="nav-item dropdown">
@@ -39,7 +39,6 @@ session_start();
                             <li><a class="dropdown-item" href="logout.php"><i class="bi bi-box-arrow-left"></i> ออกจากระบบ</a></li>
                         </ul>
                     </li>
-
                     <?php } ?>
                 </ul>
             </div>
