@@ -20,6 +20,7 @@ session_start();
 <body>
     <div class="container-lg">
         <h1 style="text-align: center;" class="mt-3">Narongsak's Webboard</h1>
+        
         <nav class="navbar navbar-expand-lg" style="background-color: #d3d3d3;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="Index.php"> <i class="bi bi-house-fill"></i> Home</a>
@@ -43,6 +44,7 @@ session_start();
                 </ul>
             </div>
         </nav>
+        
         <form>
             หมวดหมู่:
             <select name="category">
