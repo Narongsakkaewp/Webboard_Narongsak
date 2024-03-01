@@ -1,10 +1,11 @@
 <?php
 session_start();
-if(isset($_SESSION['id'])){
+if (isset($_SESSION['id'])) {
     header("location:index.php");
     die();
 }
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,10 +13,8 @@ if(isset($_SESSION['id'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
@@ -27,6 +26,16 @@ if(isset($_SESSION['id'])){
         <div class="row mt-4">
             <div class="col-lg-3 col-md-2 col-sm-1"></div>
             <div class="col-lg-6 col-md-8 col-sm-10">
+                <?php
+                if (isset($_SESSION['add_login'])) {
+                    if ($_SESSION['add_login'] == "error") {
+                        echo "<div class='alert alert-danger'>ชื่อบัญชีซ้ำหรือฐานข้อมูลมีปัญหา</div>";
+                    } else {
+                        echo "<div class='alert alert-success'>เพิ่มบัญชีเรียบร้อยแล้ว</div>";
+                    }
+                    unset($_SESSION['add_login']);
+                }
+                ?>
                 <div class="card border-primary">
                     <div class="card-header bg-primary text-white">เข้าสู่ระบบ</div>
                     <div class="card-body">
@@ -78,13 +87,15 @@ if(isset($_SESSION['id'])){
                                     <button type="submit" class="btn btn-danger btn-sm me-2"> <i class="bi bi-x-square"></i> ยกเลิก</button>
                                 </div>
                             </div>
-                        </form>
-
                     </div>
                 </div>
+                </form>
+
             </div>
-            <div class="col-lg-3 col-md-2 col-sm-1"></div>
         </div>
+    </div>
+    <div class="col-lg-3 col-md-2 col-sm-1"></div>
+    </div>
     </div>
     <br>
 </body>
