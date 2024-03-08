@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 23, 2024 at 05:44 AM
+-- Generation Time: Mar 08, 2024 at 06:32 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -32,6 +32,15 @@ CREATE TABLE `category` (
   `name` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `name`) VALUES
+(1, 'เรื่องเรียน'),
+(2, 'เรื่องทั่วไป'),
+(3, 'เรื่องกีฬา');
+
 -- --------------------------------------------------------
 
 --
@@ -45,6 +54,13 @@ CREATE TABLE `comment` (
   `user_id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`id`, `content`, `post_date`, `user_id`, `post_id`) VALUES
+(1, 'ไม่รู้จ้า ลองไปถาม', '2024-03-08 10:56:08', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -61,6 +77,14 @@ CREATE TABLE `post` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `post`
+--
+
+INSERT INTO `post` (`id`, `title`, `content`, `post_date`, `cat_id`, `user_id`) VALUES
+(1, 'วันนี้จะกินอะไรดี?', 'No ก๋วยเตี๋ยว No ตามสั่งนะคะ', '2024-03-08 10:18:23', 2, 1),
+(2, 'ออกอย่างนี้ต้องลาออก', 'เอกสารในการทำเรื่องลาออกมีอะไรบ้าง แล้วต้องดำเนินการอย่างไรบ้างครับ', '2024-03-08 10:49:28', 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -76,6 +100,13 @@ CREATE TABLE `user` (
   `email` varchar(32) NOT NULL,
   `role` char(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `login`, `password`, `name`, `gender`, `email`, `role`) VALUES
+(1, 'admin', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'toei', 'm', 's6603052413159@kmutnb.ac.th', 'a');
 
 --
 -- Indexes for dumped tables
@@ -113,25 +144,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
