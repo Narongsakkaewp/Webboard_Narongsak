@@ -18,7 +18,7 @@ if($result->rowCount()==1){
     header("location:index.php");
     die();
 }else{
-    $_SESSION['error']="error";
+    $_SESSION['error']='error';
     header("location:login.php");
     die();
 }

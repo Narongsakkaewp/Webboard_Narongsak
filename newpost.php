@@ -60,7 +60,7 @@ if (!isset($_SESSION['id'])) {
                             <div class="row mt-3">
                                 <div class="col-lg-12 d-flex justify-content-center">
                                     <button type="submit" class="btn btn-info btn-sm text-white me-2"><i class="bi bi-caret-right-square"></i> บันทึกข้อความ</button>
-                                    <button type="submit" class="btn btn-danger btn-sm me-2"> <i class="bi bi-x-square"></i> ยกเลิก</button>
+                                    <button type="reset" class="btn btn-danger btn-sm me-2"> <i class="bi bi-x-square"></i> ยกเลิก</button>
                                 </div>
                             </div>
                         </form>
