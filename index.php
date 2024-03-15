@@ -15,6 +15,12 @@ session_start();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Webboard</title>
+    <script>
+        function myFunction(){
+            let r=confirm("ต้องการจะลบจริงหรือไม่?");
+            return r;
+        }
+    </script>
 </head>
 
 <body>
@@ -48,6 +54,7 @@ session_start();
             <?php }?>
         </div>
         <div class="container-lg">
+
         <table class="table table-striped mt-4">
             <?php
                 $conn=new PDO("mysql:host=localhost;dbname=webboard;charset=utf8","root","");
@@ -57,12 +64,12 @@ session_start();
                 $result=$conn->query($sql);
                 while($row = $result->fetch()){
                     echo "<tr><td class='d-flex justify-content-between'>
-                    <div>[$row[0]]<a href = post.php?id=$row[2]
-                    style=text-decoration:non$row[1]</a><br>$row[3]-$row[4]</div>";
+                    <div>[$row[0]] <a href = post.php?id=$row[2]
+                    style=text-decoration:non>$row[1]</a><br>$row[3] - $row[4]</div>";
 
                     if(isset($_SESSION['id']) && $_SESSION['role']=='a'){
                         echo "<div class='me-2 mt-2'><a href=delete.php?id=$row[2]
-                        class='btn btn-danger btn-sm'><i class='bi bi-trash'></i></a></div>";
+                        class='btn btn-danger btn-sm' onclick='return myFunction()'><i class='bi bi-trash3-fill'></i></a></div>";
                     }
                     echo "</td></tr>";
                  }
