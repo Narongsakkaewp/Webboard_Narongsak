@@ -32,7 +32,7 @@ if (isset($_SESSION['id'])) {
     }
 </script>
     <div>
-        <h1 style="text-align: center;" class="mt-3">Register</h1>
+        <h1 style="text-align: center;" class="mt-3">Register Webboard</h1>
         <?php include "nav.php" ?>
         <div class="row mt-4">
             <div class="col-lg-3 col-md-2 col-sm-1"></div>
